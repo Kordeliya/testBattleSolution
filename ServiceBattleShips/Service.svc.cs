@@ -1,4 +1,6 @@
 ﻿using Common;
+using Common.Request;
+using Common.Respose;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,15 @@ namespace ServiceBattleShips
    
     public class Service : IService
     {
-       
+
+        public AutorizeResponse Autorize(AutorizeRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisterResponse Register(RegisterRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
