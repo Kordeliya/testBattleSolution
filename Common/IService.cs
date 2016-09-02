@@ -9,13 +9,19 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    [ServiceContract]
+    [ServiceContract(CallbackContract = typeof(ICallBackService))]
     public interface IService
     {
-        [OperationContract(IsOneWay = true)]
+        [OperationContract(IsOneWay = false)]
         AutorizeResponse Autorize(AutorizeRequest request);
 
-        [OperationContract(IsOneWay = true)]
+        [OperationContract(IsOneWay = false)]
         RegisterResponse Register(RegisterRequest request);
+
+        [OperationContract(IsOneWay = false)]
+        CreateGameResponse CreateGame(CreateGameRequest request);
+
+        [OperationContract(IsOneWay = false)]
+        GetListGamesResponse GetListAvailableGames(GetListGamesRequest request);
     }
 }

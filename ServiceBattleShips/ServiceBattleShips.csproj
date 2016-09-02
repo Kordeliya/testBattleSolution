@@ -73,7 +73,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\BattleShips.sdf" />
     <Content Include="Service.svc" />
     <Content Include="Web.config" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
@@ -95,12 +94,12 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\MyContext.cs" />
     <Compile Include="Service.svc.cs">
       <DependentUpon>Service.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -116,6 +115,13 @@
       <Project>{cd431b2e-9804-4f5d-9a1a-f72b8f2bb7fd}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{6faaa20e-6218-4d47-86d7-43303ab83cc7}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
